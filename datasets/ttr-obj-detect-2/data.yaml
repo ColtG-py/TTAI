@@ -1,0 +1,22 @@
+names:
+- bloodsucker
+- bottomfeeder
+- coldcaller
+- doubletalker
+- flunky
+- npc
+- pencilpusher
+- pennypincher
+- shortchange
+- telemarketer
+- tightwad
+nc: 11
+roboflow:
+  license: CC BY 4.0
+  project: ttr-obj-detect
+  url: https://universe.roboflow.com/watchtower/ttr-obj-detect/dataset/2
+  version: 2
+  workspace: watchtower
+test:  path/to/test
+train: path/to/train
+val: path/to/val

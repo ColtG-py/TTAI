@@ -1,0 +1,16 @@
+names:
+- coldcaller
+- doubletalker
+- pencilpusher
+- shortchange
+- telemarketer
+nc: 5
+roboflow:
+  license: CC BY 4.0
+  project: ttr-obj-detect
+  url: https://universe.roboflow.com/watchtower/ttr-obj-detect/dataset/1
+  version: 1
+  workspace: watchtower
+test: test
+train: train
+val: valid
