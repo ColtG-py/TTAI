@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 import heapq
 from PIL import Image
+import time
+from config import SILLY_STREET
 
 def image_to_grid(image, cell_size):
     grid = []
@@ -113,10 +115,11 @@ def visualize_grid_overlay(image, grid, cell_size, color):
                 bottom_right = ((j + 1) * cell_size, (i + 1) * cell_size)
                 cv2.rectangle(image, top_left, bottom_right, color, cv2.FILLED)
 
+time.sleep(3)
 
 # Capture a specific region of the screen
 # Replace the coordinates with the actual coordinates of your map in the game
-x, y, width, height = 2300, 450, 750, 1000  # Example coordinates
+x, y, width, height = SILLY_STREET.region  # Example coordinates
 screenshot = pyautogui.screenshot(region=(x, y, width, height))
 
 # Convert the screenshot to a format suitable for OpenCV
@@ -147,7 +150,7 @@ disp_thresholded_image = Image.fromarray(thresholded_image)
 cell_size = 10  # Adjust cell size as needed
 grid = image_to_grid(thresholded_image, cell_size)
 
-start, goal = (8, 46), (60, 50)  # Replace with actual start and goal positions
+start, goal = SILLY_STREET.tunnel_entr, SILLY_STREET.tunnel_exit # Replace with actual start and goal positions
 
 visualized_image = cv2.cvtColor(thresholded_image, cv2.COLOR_GRAY2BGR)
 draw_circle_at_grid_pos(visualized_image, start, cell_size, (0, 255, 0), 5)  # Green for start
